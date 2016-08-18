@@ -65,12 +65,24 @@
                                 <color key="textColor" red="0.78431372549019607" green="0.23529411764705882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images2" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-hc-CGo">
+                                <rect key="frame" x="212" y="277" width="175" height="169"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.85465031921648427" green="1" blue="0.8750232528651205" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vUV-qH-dEP" appends="YES" id="BGz-EO-yzX"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="xX3-LA-dKE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="vUV-qH-dEP">
+                    <connections>
+                        <segue destination="Zqo-P7-Pvd" kind="show" id="WSW-km-QSz"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1053" y="507"/>
         </scene>
@@ -140,11 +152,23 @@
                                     <segue destination="M7K-1i-0Ri" kind="show" id="UAd-Mi-JLq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images3" translatesAutoresizingMaskIntoConstraints="NO" id="RPg-gb-NHe">
+                                <rect key="frame" x="214" y="273" width="173" height="169"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.82745098039215681" green="1" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aTb-HV-Yqg" appends="YES" id="hsG-c3-rG9"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzK-ni-UdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="aTb-HV-Yqg">
+                    <connections>
+                        <segue destination="VS8-RR-el1" kind="show" id="4OF-od-H1Z"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1738" y="507"/>
         </scene>
@@ -173,12 +197,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Knoowl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-Cp-dmo">
-                                <rect key="frame" x="225" y="286" width="151" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.78431372549019607" green="0.23529411764705882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rt-Xk-cMy">
                                 <rect key="frame" x="214" y="471" width="173" height="42"/>
@@ -214,11 +232,29 @@
                                     <segue destination="M7K-1i-0Ri" kind="show" id="wUb-wQ-4iJ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images4" translatesAutoresizingMaskIntoConstraints="NO" id="5qa-4l-IQ7">
+                                <rect key="frame" x="214" y="275" width="173" height="169"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Knoowl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-Cp-dmo">
+                                <rect key="frame" x="231" y="255" width="151" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.78431372549019607" green="0.23529411764705882" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.792156862745098" green="1" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZsX-Wk-CRu" appends="YES" id="g2w-6t-Mz4"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hM4-pE-xN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="ZsX-Wk-CRu">
+                    <connections>
+                        <segue destination="M7K-1i-0Ri" kind="show" id="QrZ-Nq-zZd"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2423" y="507"/>
         </scene>
@@ -267,7 +303,14 @@
             <point key="canvasLocation" x="359" y="507"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="images2" width="225" height="225"/>
+        <image name="images3" width="225" height="225"/>
+        <image name="images4" width="225" height="225"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YkQ-49-kYR"/>
+        <segue reference="WSW-km-QSz"/>
+        <segue reference="ENM-t6-jQ7"/>
+        <segue reference="wUb-wQ-4iJ"/>
     </inferredMetricsTieBreakers>
 </document>
