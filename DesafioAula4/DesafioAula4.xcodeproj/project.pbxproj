@@ -13,6 +13,8 @@
 		579F09AA1D6CFB420081FF45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579F09A81D6CFB420081FF45 /* Main.storyboard */; };
 		579F09AC1D6CFB420081FF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579F09AB1D6CFB420081FF45 /* Assets.xcassets */; };
 		579F09AF1D6CFB420081FF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579F09AD1D6CFB420081FF45 /* LaunchScreen.storyboard */; };
+		579F09B91D6CFD190081FF45 /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 579F09B81D6CFD190081FF45 /* PropertyList.plist */; };
+		579F09BE1D6D09990081FF45 /* TabelaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F09BD1D6D09990081FF45 /* TabelaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		579F09AB1D6CFB420081FF45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		579F09AE1D6CFB420081FF45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		579F09B01D6CFB420081FF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579F09B81D6CFD190081FF45 /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		579F09BC1D6D09990081FF45 /* TabelaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabelaViewController.h; sourceTree = "<group>"; };
+		579F09BD1D6D09990081FF45 /* TabelaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabelaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				579F09A01D6CFB420081FF45 /* main.m */,
+				579F09B81D6CFD190081FF45 /* PropertyList.plist */,
+				579F09BC1D6D09990081FF45 /* TabelaViewController.h */,
+				579F09BD1D6D09990081FF45 /* TabelaViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			files = (
 				579F09AF1D6CFB420081FF45 /* LaunchScreen.storyboard in Resources */,
 				579F09AC1D6CFB420081FF45 /* Assets.xcassets in Resources */,
+				579F09B91D6CFD190081FF45 /* PropertyList.plist in Resources */,
 				579F09AA1D6CFB420081FF45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				579F09A71D6CFB420081FF45 /* ViewController.m in Sources */,
+				579F09BE1D6D09990081FF45 /* TabelaViewController.m in Sources */,
 				579F09A41D6CFB420081FF45 /* AppDelegate.m in Sources */,
 				579F09A11D6CFB420081FF45 /* main.m in Sources */,
 			);

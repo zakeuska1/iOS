@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSArray *plist;
+
 @end
 
 @implementation ViewController
@@ -19,29 +21,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSBundle *mb = [NSBundle mainBundle];
-    NSString *path = [mb pathForResource:@"exemplo" ofType:@"plist"];
+    NSString *path = [mb pathForResource:@"PropertyList" ofType:@"plist"];
     
-    NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:path];
+    self.plist = [NSArray arrayWithContentsOfFile:path];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    //Se a raíz fosse um array
-    //    NSArray *plist2 = [NSArray arrayWithContentsOfFile:path];
-    
-    
-    [plist writeToFile:path atomically:YES];
-    
-    
-    NSString *pasta =
-    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                         NSUserDomainMask,
-                                         YES) firstObject];
-    
-    NSString *arquivo = [pasta stringByAppendingPathComponent:@"arquivo"];
-    arquivo = [arquivo stringByAppendingPathExtension:@"plist"];
-    
-    [@[@2,@3] writeToFile:arquivo atomically:YES];
-    
-    
-    [[NSFileManager defaultManager] createFileAtPath:arquivo contents:nil attributes:nil];
+    return self.plist.count;
 }
 
 - (void)didReceiveMemoryWarning {
