@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.7843137255" green="0.23529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.39226157598275335" green="0.79743589743589749" blue="0.55217817995341034" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="qC6-3r-ybF" appends="YES" id="JHB-4P-eqj"/>
@@ -54,7 +54,7 @@
                     <view key="view" contentMode="scaleToFill" id="HbB-xM-GB7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.79215686269999996" green="1" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.28507208422942881" green="0.58597756410256419" blue="0.34311992888664472" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoT-qi-zFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,6 +87,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.79215686269999996" green="1" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
