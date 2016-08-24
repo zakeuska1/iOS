@@ -10,8 +10,6 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSArray *plist;
-
 @end
 
 @implementation ViewController
@@ -20,16 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSBundle *mb = [NSBundle mainBundle];
-    NSString *path = [mb pathForResource:@"PropertyList" ofType:@"plist"];
-    
-    self.plist = [NSArray arrayWithContentsOfFile:path];
+
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return self.plist.count;
-}
+
+
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"celulaPadrao2" forIndexPath:indexPath];
+//    [cell setBackgroundColor:indexPath.row%2==0?[UIColor greenColor]:[UIColor blueColor]];
+//    return cell;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

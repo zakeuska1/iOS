@@ -1,34 +1,34 @@
 //
-//  TabelaViewController.m
+//  PrimeiraViewController.m
 //  DesafioAula4
 //
 //  Created by ALUNO on 23/08/16.
 //  Copyright © 2016 IESB. All rights reserved.
 //
 
-#import "TabelaViewController.h"
 #import "PrimeiraViewController.h"
 
-@interface TabelaViewController ()
+@interface PrimeiraViewController ()
 
-@property (strong, nonatomic) NSArray<NSString *> *nomes;
-@property (strong, nonatomic) NSArray *plist;
-@property (strong, nonatomic) NSString *texto;
+@property (weak, nonatomic) IBOutlet UILabel *labelValor;
 
 @end
 
-@implementation TabelaViewController
+@implementation PrimeiraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSBundle *mb = [NSBundle mainBundle];
-    NSString *path = [mb pathForResource:@"PropertyList" ofType:@"plist"];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    self.plist = [NSArray arrayWithContentsOfFile:path];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
 
-    
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.labelValor setText:self.valor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,46 +36,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.plist.count;
-}
 
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"xpto" forIndexPath:indexPath];
-    
-    NSString *nome = [self.plist objectAtIndex:indexPath.row];
-    
-    [cell.textLabel setText:nome];
+    // Configure the cell...
     
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *myBuddy = [self.plist objectAtIndex:indexPath.row];
-    
-    self.texto = myBuddy;
-    
-    [self performSegueWithIdentifier:@"primeiraParaSegundaSegue" sender:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"primeiraParaSegundaSegue"]) {
-        
-        NSString *valor = self.texto;
-        PrimeiraViewController *destino = segue.destinationViewController;
-        
-        [destino setValor:valor];
-    }
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
