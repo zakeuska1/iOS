@@ -59,9 +59,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *myBuddy = [self.plist objectAtIndex:indexPath.row];
     
-    self.texto = myBuddy;
+    self.texto = [self.plist objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"primeiraParaSegundaSegue" sender:nil];
 }
