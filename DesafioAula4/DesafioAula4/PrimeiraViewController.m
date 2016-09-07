@@ -7,6 +7,7 @@
 //
 
 #import "PrimeiraViewController.h"
+#import "TabelaViewController.h"
 
 @interface PrimeiraViewController ()
 
@@ -30,6 +31,22 @@
     [super viewWillAppear:animated];
     [self.labelValor setText:self.valor];
 }
+
+
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"vaiParaSegundaPagina"]) {
+        SegundoViewController *destino = segue.destinationViewController;
+        [destino setTextoLabel:self.textTextoInserido.text];
+        [destino setViewController:self];
+    }
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -14,6 +14,8 @@
 		576E08011D5BEDCB00D2B4DB /* ExerFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 576E07FF1D5BEDCB00D2B4DB /* ExerFinal.xcdatamodeld */; };
 		576E08031D5BEDCB00D2B4DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576E08021D5BEDCB00D2B4DB /* Assets.xcassets */; };
 		576E08061D5BEDCB00D2B4DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576E08041D5BEDCB00D2B4DB /* LaunchScreen.storyboard */; };
+		57D4F4E31D7F79E500804A80 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F4E21D7F79E500804A80 /* TableViewController.m */; };
+		57D4F4E91D7F7BFD00804A80 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D4F4E81D7F7BFD00804A80 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		576E08021D5BEDCB00D2B4DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576E08051D5BEDCB00D2B4DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		576E08071D5BEDCB00D2B4DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57D4F4E11D7F79E500804A80 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		57D4F4E21D7F79E500804A80 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		57D4F4E71D7F7BFD00804A80 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		57D4F4E81D7F7BFD00804A80 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				576E07F41D5BEDCB00D2B4DB /* main.m */,
+				57D4F4E11D7F79E500804A80 /* TableViewController.h */,
+				57D4F4E21D7F79E500804A80 /* TableViewController.m */,
+				57D4F4E71D7F7BFD00804A80 /* LoginViewController.h */,
+				57D4F4E81D7F7BFD00804A80 /* LoginViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,7 +164,9 @@
 			files = (
 				576E08011D5BEDCB00D2B4DB /* ExerFinal.xcdatamodeld in Sources */,
 				576E07FB1D5BEDCB00D2B4DB /* ViewController.m in Sources */,
+				57D4F4E91D7F7BFD00804A80 /* LoginViewController.m in Sources */,
 				576E07F81D5BEDCB00D2B4DB /* AppDelegate.m in Sources */,
+				57D4F4E31D7F79E500804A80 /* TableViewController.m in Sources */,
 				576E07F51D5BEDCB00D2B4DB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +318,7 @@
 				576E080C1D5BEDCB00D2B4DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
