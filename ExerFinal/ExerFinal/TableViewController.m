@@ -7,12 +7,15 @@
 //
 
 #import "TableViewController.h"
+#import "Orcamento+CoreDataClass.h"
+#import "AppDelegate.h"
 
-@interface TableViewController ()
+
+@interface TableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tabela;
-
 @property (strong, nonatomic) NSMutableArray<NSString *> *nomes;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -21,20 +24,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tabela setDataSource:self];
+    //[self.tabela setDataSource:self];
     
-    self.nomes = [[NSMutableArray alloc] init];
+    //self.nomes = [[NSMutableArray alloc] init];
     
-    [self.nomes addObject:[NSString stringWithFormat:@"Zacarias"]];
-    [self.nomes addObject:[NSString stringWithFormat:@"Soares"]];
-    [self.nomes addObject:[NSString stringWithFormat:@"de Lima"]];
-    [self.nomes addObject:[NSString stringWithFormat:@"Junior"]];
+    //[self.nomes addObject:[NSString stringWithFormat:@"Zacarias"]];
+    //[self.nomes addObject:[NSString stringWithFormat:@"Soares"]];
+    //[self.nomes addObject:[NSString stringWithFormat:@"de Lima"]];
+    //[self.nomes addObject:[NSString stringWithFormat:@"Junior"]];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self setTitle:@"NSFetchedResultsController"];
+    [self.navigationItem setPrompt:@"Exemplo de Retrieve e Delete"];
+    
+    [self.navigationItem setRightBarButtonItem: self.editButtonItem];
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (!_fetchedResultsController) {
+        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSPersistentContainer *persistentContainer = delegate.persistentContainer;
+        
+        NSFetchRequest *fetchRequest = [Orcamento fetchRequest];
+        [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]]];
+        
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:persistentContainer.viewContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+        [_fetchedResultsController setDelegate:self];
+    }
+    return _fetchedResultsController;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSError *erro;
+    if (![self.fetchedResultsController performFetch:&erro]) {
+        NSLog(@"Erro ao recuperar orçamentos: %@", erro);
+    }else {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,59 +77,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.nomes.count;
+    return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:@"xpto"
-                                    forIndexPath:indexPath];
-    
-    
-    UIColor *verdeEscuro = [UIColor colorWithRed:144.0/255.0
-                                             green:238.0/255.0
-                                              blue:144.0/255.0
-                                             alpha:1];
-    
-    UIColor *verdeClaro = [UIColor colorWithRed:152.0/255.0
-                                           green:251.0/255.0
-                                            blue:152.0/255.0
-                                           alpha:1];
-    
-    if (indexPath.row % 2) {
-        [cell setBackgroundColor:verdeEscuro];
-    }else {
-        [cell setBackgroundColor:verdeClaro];
-    }
-    
-    NSString *nome = [self.nomes objectAtIndex:indexPath.row];
-    
-    [cell.textLabel setText:nome];
-    [cell.textLabel setTextColor:[UIColor blackColor]];
-    
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celulaPadrao"
+                                                            forIndexPath:indexPath];
+    [self configurarCelula:cell noIndexPath:indexPath];
     return cell;
     
-    
-    
 }
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
 
+- (void) configurarCelula: (UITableViewCell *) cell noIndexPath: (NSIndexPath *) indexPath {
+    Orcamento *orcamento = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textLabel setText:orcamento.nome];
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,41 +106,79 @@
     return YES;
 }
 
-
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.nomes removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        Orcamento *orcamento = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.fetchedResultsController.managedObjectContext deleteObject:orcamento];
+        
+        NSError *erroCoreData;
+        if (![self.fetchedResultsController.managedObjectContext save:&erroCoreData]) {
+            NSLog(@"Deu erro: %@", erroCoreData);
+        }
     }
+
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
 }
 
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        default:
+            break;
+    }
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            if (newIndexPath) {
+                [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        case NSFetchedResultsChangeDelete:
+            if (indexPath) {
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configurarCelula:[self.tableView cellForRowAtIndexPath:indexPath] noIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeMove:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+            
+        default:
+            break;
+    }
+}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
 
 @end

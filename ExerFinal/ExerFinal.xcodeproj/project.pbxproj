@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571C27C11DC006F4002E3FA2 /* Orcamento+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 571C27BE1DC006F4002E3FA2 /* Orcamento+CoreDataClass.m */; };
+		571C27C21DC006F4002E3FA2 /* Orcamento+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 571C27C01DC006F4002E3FA2 /* Orcamento+CoreDataProperties.m */; };
+		571C27C51DC014FD002E3FA2 /* AddOrcamentoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571C27C41DC014FD002E3FA2 /* AddOrcamentoViewController.m */; };
 		576E07F51D5BEDCB00D2B4DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 576E07F41D5BEDCB00D2B4DB /* main.m */; };
 		576E07F81D5BEDCB00D2B4DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 576E07F71D5BEDCB00D2B4DB /* AppDelegate.m */; };
 		576E07FB1D5BEDCB00D2B4DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576E07FA1D5BEDCB00D2B4DB /* ViewController.m */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		571C27BD1DC006F4002E3FA2 /* Orcamento+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Orcamento+CoreDataClass.h"; sourceTree = "<group>"; };
+		571C27BE1DC006F4002E3FA2 /* Orcamento+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Orcamento+CoreDataClass.m"; sourceTree = "<group>"; };
+		571C27BF1DC006F4002E3FA2 /* Orcamento+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Orcamento+CoreDataProperties.h"; sourceTree = "<group>"; };
+		571C27C01DC006F4002E3FA2 /* Orcamento+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Orcamento+CoreDataProperties.m"; sourceTree = "<group>"; };
+		571C27C31DC014FD002E3FA2 /* AddOrcamentoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrcamentoViewController.h; sourceTree = "<group>"; };
+		571C27C41DC014FD002E3FA2 /* AddOrcamentoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrcamentoViewController.m; sourceTree = "<group>"; };
 		576E07F01D5BEDCB00D2B4DB /* ExerFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExerFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576E07F41D5BEDCB00D2B4DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		576E07F61D5BEDCB00D2B4DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +56,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		571C27AF1DBFFD7E002E3FA2 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				571C27BD1DC006F4002E3FA2 /* Orcamento+CoreDataClass.h */,
+				571C27BE1DC006F4002E3FA2 /* Orcamento+CoreDataClass.m */,
+				571C27BF1DC006F4002E3FA2 /* Orcamento+CoreDataProperties.h */,
+				571C27C01DC006F4002E3FA2 /* Orcamento+CoreDataProperties.m */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
 		576E07E71D5BEDCB00D2B4DB = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +86,7 @@
 		576E07F21D5BEDCB00D2B4DB /* ExerFinal */ = {
 			isa = PBXGroup;
 			children = (
+				571C27AF1DBFFD7E002E3FA2 /* Entidades */,
 				576E07F61D5BEDCB00D2B4DB /* AppDelegate.h */,
 				576E07F71D5BEDCB00D2B4DB /* AppDelegate.m */,
 				576E07F91D5BEDCB00D2B4DB /* ViewController.h */,
@@ -88,6 +109,8 @@
 				57D4F4E21D7F79E500804A80 /* TableViewController.m */,
 				57D4F4E71D7F7BFD00804A80 /* LoginViewController.h */,
 				57D4F4E81D7F7BFD00804A80 /* LoginViewController.m */,
+				571C27C31DC014FD002E3FA2 /* AddOrcamentoViewController.h */,
+				571C27C41DC014FD002E3FA2 /* AddOrcamentoViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,6 +146,7 @@
 				TargetAttributes = {
 					576E07EF1D5BEDCB00D2B4DB = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -166,7 +190,10 @@
 				576E07FB1D5BEDCB00D2B4DB /* ViewController.m in Sources */,
 				57D4F4E91D7F7BFD00804A80 /* LoginViewController.m in Sources */,
 				576E07F81D5BEDCB00D2B4DB /* AppDelegate.m in Sources */,
+				571C27C21DC006F4002E3FA2 /* Orcamento+CoreDataProperties.m in Sources */,
 				57D4F4E31D7F79E500804A80 /* TableViewController.m in Sources */,
+				571C27C11DC006F4002E3FA2 /* Orcamento+CoreDataClass.m in Sources */,
+				571C27C51DC014FD002E3FA2 /* AddOrcamentoViewController.m in Sources */,
 				576E07F51D5BEDCB00D2B4DB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,10 +308,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ExerFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.iesb.ExerFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExerFinal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -292,10 +323,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ExerFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.iesb.ExerFinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExerFinal-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
