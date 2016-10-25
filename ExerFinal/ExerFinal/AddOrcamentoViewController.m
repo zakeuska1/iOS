@@ -31,7 +31,7 @@
     Orcamento *orcamento = [NSEntityDescription insertNewObjectForEntityForName:@"Orcamento" inManagedObjectContext:context];
     
     
-    [orcamento setNome:self.txtNome];
+    [orcamento setNome:self.txtNome.text];
     
 }
 
