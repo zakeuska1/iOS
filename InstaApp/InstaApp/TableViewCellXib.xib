@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,78 +14,105 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="559"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="559"/>
+                <frame key="frameInset" width="320" height="558"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mr bean halloween" translatesAutoresizingMaskIntoConstraints="NO" id="Srr-wx-xpm">
-                        <frame key="frameInset" width="54" height="49"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mr bean halloween copy" translatesAutoresizingMaskIntoConstraints="NO" id="Srr-wx-xpm">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="7gq-px-BRQ"/>
+                            <constraint firstAttribute="width" constant="30" id="Iiz-Yb-Bvi"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mrbean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8so-Hz-vxi">
-                        <frame key="frameInset" minX="61" minY="14" width="133" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mrbean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8so-Hz-vxi">
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" red="0.13113999805046017" green="0.46066990634588428" blue="0.76870993589743586" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="38m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpR-un-fq8">
-                        <frame key="frameInset" minX="257" minY="14" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpR-un-fq8">
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mr.-bean---big" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-cb-IfF">
-                        <frame key="frameInset" minY="57" width="320" height="355"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mr.-bean---big" translatesAutoresizingMaskIntoConstraints="NO" id="P1Z-cb-IfF">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="P1Z-cb-IfF" secondAttribute="height" multiplier="316:361" id="f0d-wS-6MQ"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="128 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-zy-NKd">
-                        <frame key="frameInset" minX="8" minY="454" width="79" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mrbean" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpR-M7-0g2">
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" red="0.13113999809999999" green="0.46066990629999999" blue="0.76870993590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="elizabethgilmore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpR-M7-0g2">
-                        <frame key="frameInset" minX="8" minY="483" width="135" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" red="0.13113999809999999" green="0.46066990629999999" blue="0.76870993590000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#makeportraits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-AX-i3K">
-                        <frame key="frameInset" minX="152" minY="483" width="125" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#makeportraits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-AX-i3K">
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.13113999809999999" green="0.46066990629999999" blue="0.76870993590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="view all 12 comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOe-lY-vhg">
-                        <frame key="frameInset" minX="12" minY="512" width="170" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="view all 12 comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOe-lY-vhg">
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-lF-JyO">
-                        <frame key="frameInset" minX="4" minY="414" width="47" height="39"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-lF-JyO">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Cf6-Qg-B0f"/>
+                            <constraint firstAttribute="width" constant="30" id="WTX-iO-0FJ"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540-2" translatesAutoresizingMaskIntoConstraints="NO" id="q7M-J0-oxz">
-                        <frame key="frameInset" minX="61" minY="422" width="33" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540-2" translatesAutoresizingMaskIntoConstraints="NO" id="q7M-J0-oxz">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="DOp-3e-JTE"/>
+                            <constraint firstAttribute="width" constant="30" id="gGP-bF-zR3"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540-3" translatesAutoresizingMaskIntoConstraints="NO" id="ac5-16-Efu">
-                        <frame key="frameInset" minX="251" minY="414" width="61" height="38"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tumblr_inline_ntpl4jmVAb1qm4rc3_540-3" translatesAutoresizingMaskIntoConstraints="NO" id="ac5-16-Efu"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-hN-P0W">
+                        <color key="backgroundColor" red="0.96013621794871784" green="0.96013621794871784" blue="0.96013621794871784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="6rt-GR-tA1"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💙128 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-zy-NKd">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.13113999809999999" green="0.46066990629999999" blue="0.76870993590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Srr-wx-xpm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1TG-Pm-Z8q"/>
+                    <constraint firstAttribute="trailing" secondItem="P1Z-cb-IfF" secondAttribute="trailing" constant="2" id="1ic-FO-PQ9"/>
+                    <constraint firstItem="gIf-zy-NKd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="2yL-sk-Bmr"/>
+                    <constraint firstItem="Srr-wx-xpm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3hF-Wu-sfz"/>
+                    <constraint firstItem="ac5-16-Efu" firstAttribute="top" secondItem="P1Z-cb-IfF" secondAttribute="bottom" constant="11" id="3n0-ah-2s2"/>
+                    <constraint firstItem="ac5-16-Efu" firstAttribute="centerY" secondItem="q7M-J0-oxz" secondAttribute="centerY" id="FVd-NK-ST0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ac5-16-Efu" secondAttribute="trailing" constant="2" id="FsN-h0-4L8"/>
+                    <constraint firstItem="PQb-lF-JyO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="GjC-vR-0J3"/>
+                    <constraint firstItem="gpR-un-fq8" firstAttribute="centerY" secondItem="8so-Hz-vxi" secondAttribute="centerY" id="IKc-EV-Z8a"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gpR-un-fq8" secondAttribute="trailing" constant="2" id="N9I-0y-eGI"/>
+                    <constraint firstItem="tBU-hN-P0W" firstAttribute="top" secondItem="q7M-J0-oxz" secondAttribute="bottom" constant="10" id="OX9-bv-btP"/>
+                    <constraint firstItem="8so-Hz-vxi" firstAttribute="leading" secondItem="Srr-wx-xpm" secondAttribute="trailing" constant="10" id="S2f-D5-irW"/>
+                    <constraint firstItem="tBU-hN-P0W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="V1A-GG-bCb"/>
+                    <constraint firstItem="q7M-J0-oxz" firstAttribute="top" secondItem="P1Z-cb-IfF" secondAttribute="bottom" constant="10" id="VN4-oa-2bG"/>
+                    <constraint firstItem="BOe-lY-vhg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="b16-gk-tYF"/>
+                    <constraint firstItem="BOe-lY-vhg" firstAttribute="top" secondItem="YpR-M7-0g2" secondAttribute="bottom" constant="6" id="c2Q-6a-Ezz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tBU-hN-P0W" secondAttribute="trailing" constant="4" id="dEB-Xy-PMo"/>
+                    <constraint firstItem="P1Z-cb-IfF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="dsk-43-4Ts"/>
+                    <constraint firstItem="bTk-AX-i3K" firstAttribute="leading" secondItem="YpR-M7-0g2" secondAttribute="trailing" constant="10" id="heM-6D-PP7"/>
+                    <constraint firstItem="YpR-M7-0g2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="ieo-Rf-MXO"/>
+                    <constraint firstItem="q7M-J0-oxz" firstAttribute="leading" secondItem="PQb-lF-JyO" secondAttribute="trailing" constant="5" id="jN1-Fw-qZt"/>
+                    <constraint firstItem="P1Z-cb-IfF" firstAttribute="top" secondItem="Srr-wx-xpm" secondAttribute="bottom" constant="5" id="m1v-qL-dop"/>
+                    <constraint firstItem="bTk-AX-i3K" firstAttribute="centerY" secondItem="YpR-M7-0g2" secondAttribute="centerY" id="n0F-Lp-hJW"/>
+                    <constraint firstItem="PQb-lF-JyO" firstAttribute="top" secondItem="P1Z-cb-IfF" secondAttribute="bottom" constant="7" id="p8r-ab-5aD"/>
+                    <constraint firstItem="gIf-zy-NKd" firstAttribute="top" secondItem="tBU-hN-P0W" secondAttribute="bottom" constant="10" id="s9A-zb-F1C"/>
+                    <constraint firstItem="YpR-M7-0g2" firstAttribute="top" secondItem="gIf-zy-NKd" secondAttribute="bottom" constant="2" id="vUy-Wv-fj4"/>
+                    <constraint firstItem="8so-Hz-vxi" firstAttribute="centerY" secondItem="Srr-wx-xpm" secondAttribute="centerY" id="ved-9h-bhf"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="25" y="147.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="mr bean halloween" width="435" height="480"/>
+        <image name="mr bean halloween copy" width="366" height="394"/>
         <image name="mr.-bean---big" width="745" height="583"/>
         <image name="tumblr_inline_ntpl4jmVAb1qm4rc3_540" width="42" height="43"/>
         <image name="tumblr_inline_ntpl4jmVAb1qm4rc3_540-2" width="37" height="34"/>
