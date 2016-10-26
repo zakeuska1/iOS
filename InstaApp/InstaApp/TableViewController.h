@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  InstaApp
 //
 //  Created by ALUNO on 26/10/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TableViewController : UITableViewController
 
 @end
-

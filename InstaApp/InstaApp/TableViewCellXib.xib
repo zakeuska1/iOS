@@ -49,6 +49,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="view all 12 comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOe-lY-vhg">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="vWH-wV-KcC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -97,6 +100,7 @@
                     <constraint firstItem="BOe-lY-vhg" firstAttribute="top" secondItem="YpR-M7-0g2" secondAttribute="bottom" constant="6" id="c2Q-6a-Ezz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="tBU-hN-P0W" secondAttribute="trailing" constant="4" id="dEB-Xy-PMo"/>
                     <constraint firstItem="P1Z-cb-IfF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="dsk-43-4Ts"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="BOe-lY-vhg" secondAttribute="bottom" constant="2" id="fAe-Sa-zl9"/>
                     <constraint firstItem="bTk-AX-i3K" firstAttribute="leading" secondItem="YpR-M7-0g2" secondAttribute="trailing" constant="10" id="heM-6D-PP7"/>
                     <constraint firstItem="YpR-M7-0g2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="ieo-Rf-MXO"/>
                     <constraint firstItem="q7M-J0-oxz" firstAttribute="leading" secondItem="PQb-lF-JyO" secondAttribute="trailing" constant="5" id="jN1-Fw-qZt"/>

@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		57E5DB291DC1570E00874B19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB281DC1570E00874B19 /* main.m */; };
 		57E5DB2C1DC1570E00874B19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB2B1DC1570E00874B19 /* AppDelegate.m */; };
-		57E5DB2F1DC1570E00874B19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB2E1DC1570E00874B19 /* ViewController.m */; };
 		57E5DB321DC1570E00874B19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB301DC1570E00874B19 /* Main.storyboard */; };
 		57E5DB351DC1570E00874B19 /* InstaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB331DC1570E00874B19 /* InstaApp.xcdatamodeld */; };
 		57E5DB371DC1570E00874B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB361DC1570E00874B19 /* Assets.xcassets */; };
 		57E5DB3A1DC1570E00874B19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB381DC1570E00874B19 /* LaunchScreen.storyboard */; };
 		57E5DB481DC1580F00874B19 /* TableViewCellXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB461DC1580F00874B19 /* TableViewCellXib.m */; };
 		57E5DB491DC1580F00874B19 /* TableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */; };
+		57E5DB4C1DC16F2400874B19 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB4B1DC16F2400874B19 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +23,6 @@
 		57E5DB281DC1570E00874B19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57E5DB2A1DC1570E00874B19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57E5DB2B1DC1570E00874B19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		57E5DB2D1DC1570E00874B19 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		57E5DB2E1DC1570E00874B19 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		57E5DB311DC1570E00874B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57E5DB341DC1570E00874B19 /* InstaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaApp.xcdatamodel; sourceTree = "<group>"; };
 		57E5DB361DC1570E00874B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +31,8 @@
 		57E5DB451DC1580F00874B19 /* TableViewCellXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellXib.h; sourceTree = "<group>"; };
 		57E5DB461DC1580F00874B19 /* TableViewCellXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellXib.m; sourceTree = "<group>"; };
 		57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellXib.xib; sourceTree = "<group>"; };
+		57E5DB4A1DC16F2400874B19 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		57E5DB4B1DC16F2400874B19 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +67,6 @@
 			children = (
 				57E5DB2A1DC1570E00874B19 /* AppDelegate.h */,
 				57E5DB2B1DC1570E00874B19 /* AppDelegate.m */,
-				57E5DB2D1DC1570E00874B19 /* ViewController.h */,
-				57E5DB2E1DC1570E00874B19 /* ViewController.m */,
 				57E5DB301DC1570E00874B19 /* Main.storyboard */,
 				57E5DB361DC1570E00874B19 /* Assets.xcassets */,
 				57E5DB381DC1570E00874B19 /* LaunchScreen.storyboard */,
@@ -86,6 +84,8 @@
 				57E5DB451DC1580F00874B19 /* TableViewCellXib.h */,
 				57E5DB461DC1580F00874B19 /* TableViewCellXib.m */,
 				57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */,
+				57E5DB4A1DC16F2400874B19 /* TableViewController.h */,
+				57E5DB4B1DC16F2400874B19 /* TableViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E5DB481DC1580F00874B19 /* TableViewCellXib.m in Sources */,
-				57E5DB2F1DC1570E00874B19 /* ViewController.m in Sources */,
 				57E5DB351DC1570E00874B19 /* InstaApp.xcdatamodeld in Sources */,
 				57E5DB2C1DC1570E00874B19 /* AppDelegate.m in Sources */,
+				57E5DB4C1DC16F2400874B19 /* TableViewController.m in Sources */,
 				57E5DB291DC1570E00874B19 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
