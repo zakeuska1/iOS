@@ -14,7 +14,8 @@
 		57E5DB351DC1570E00874B19 /* InstaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB331DC1570E00874B19 /* InstaApp.xcdatamodeld */; };
 		57E5DB371DC1570E00874B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB361DC1570E00874B19 /* Assets.xcassets */; };
 		57E5DB3A1DC1570E00874B19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB381DC1570E00874B19 /* LaunchScreen.storyboard */; };
-		57E5DB421DC1575500874B19 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB411DC1575500874B19 /* View.xib */; };
+		57E5DB481DC1580F00874B19 /* TableViewCellXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E5DB461DC1580F00874B19 /* TableViewCellXib.m */; };
+		57E5DB491DC1580F00874B19 /* TableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,9 @@
 		57E5DB361DC1570E00874B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E5DB391DC1570E00874B19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57E5DB3B1DC1570E00874B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57E5DB411DC1575500874B19 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		57E5DB451DC1580F00874B19 /* TableViewCellXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellXib.h; sourceTree = "<group>"; };
+		57E5DB461DC1580F00874B19 /* TableViewCellXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellXib.m; sourceTree = "<group>"; };
+		57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellXib.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				57E5DB281DC1570E00874B19 /* main.m */,
-				57E5DB411DC1575500874B19 /* View.xib */,
+				57E5DB451DC1580F00874B19 /* TableViewCellXib.h */,
+				57E5DB461DC1580F00874B19 /* TableViewCellXib.m */,
+				57E5DB471DC1580F00874B19 /* TableViewCellXib.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -143,10 +148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E5DB421DC1575500874B19 /* View.xib in Resources */,
 				57E5DB3A1DC1570E00874B19 /* LaunchScreen.storyboard in Resources */,
 				57E5DB371DC1570E00874B19 /* Assets.xcassets in Resources */,
 				57E5DB321DC1570E00874B19 /* Main.storyboard in Resources */,
+				57E5DB491DC1580F00874B19 /* TableViewCellXib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E5DB481DC1580F00874B19 /* TableViewCellXib.m in Sources */,
 				57E5DB2F1DC1570E00874B19 /* ViewController.m in Sources */,
 				57E5DB351DC1570E00874B19 /* InstaApp.xcdatamodeld in Sources */,
 				57E5DB2C1DC1570E00874B19 /* AppDelegate.m in Sources */,
