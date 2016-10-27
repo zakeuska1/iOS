@@ -18,7 +18,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [self.post.layer setBorderColor:[[UIColor colorWithWhite:0.3 alpha:1] CGColor]]
+    [self.post.layer setBorderColor:[[UIColor colorWithWhite:0.3 alpha:1] CGColor]];
+    [self.post setBackgroundColor: [UIColor whiteColor]];
     // Initialization code
 }
 
