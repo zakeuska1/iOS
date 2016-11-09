@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Produto+CoreDataClass.h"
+
+@class Produto;
 
 @interface CadViewController : UIViewController
 

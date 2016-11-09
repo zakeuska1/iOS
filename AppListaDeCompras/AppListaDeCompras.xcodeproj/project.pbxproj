@@ -15,10 +15,10 @@
 		57320DE11DD277AD00BFE7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57320DDF1DD277AD00BFE7E2 /* LaunchScreen.storyboard */; };
 		57320DEA1DD2784700BFE7E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DE91DD2784700BFE7E2 /* LoginViewController.m */; };
 		57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DEF1DD2832800BFE7E2 /* TableViewController.m */; };
-		57320DF51DD2864500BFE7E2 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DF21DD2864500BFE7E2 /* Produto+CoreDataClass.m */; };
-		57320DF61DD2864500BFE7E2 /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DF41DD2864500BFE7E2 /* Produto+CoreDataProperties.m */; };
 		57320DF91DD2874C00BFE7E2 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DF81DD2874C00BFE7E2 /* TableViewCell.m */; };
 		57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DFB1DD28A3500BFE7E2 /* CadViewController.m */; };
+		57D5DAC51DD3E93000C4FA00 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */; };
+		57D5DAC61DD3E93000C4FA00 /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,14 +35,14 @@
 		57320DE91DD2784700BFE7E2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		57320DEE1DD2832800BFE7E2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		57320DEF1DD2832800BFE7E2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		57320DF11DD2864500BFE7E2 /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataClass.h"; sourceTree = "<group>"; };
-		57320DF21DD2864500BFE7E2 /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataClass.m"; sourceTree = "<group>"; };
-		57320DF31DD2864500BFE7E2 /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
-		57320DF41DD2864500BFE7E2 /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
 		57320DF71DD2874C00BFE7E2 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		57320DF81DD2874C00BFE7E2 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		57320DFA1DD28A3500BFE7E2 /* CadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadViewController.h; sourceTree = "<group>"; };
 		57320DFB1DD28A3500BFE7E2 /* CadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadViewController.m; sourceTree = "<group>"; };
+		57D5DAC11DD3E93000C4FA00 /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataClass.h"; sourceTree = "<group>"; };
+		57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataClass.m"; sourceTree = "<group>"; };
+		57D5DAC31DD3E93000C4FA00 /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
+		57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +59,10 @@
 		57320DC21DD277AD00BFE7E2 = {
 			isa = PBXGroup;
 			children = (
-				57320DF11DD2864500BFE7E2 /* Produto+CoreDataClass.h */,
-				57320DF21DD2864500BFE7E2 /* Produto+CoreDataClass.m */,
-				57320DF31DD2864500BFE7E2 /* Produto+CoreDataProperties.h */,
-				57320DF41DD2864500BFE7E2 /* Produto+CoreDataProperties.m */,
+				57D5DAC11DD3E93000C4FA00 /* Produto+CoreDataClass.h */,
+				57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */,
+				57D5DAC31DD3E93000C4FA00 /* Produto+CoreDataProperties.h */,
+				57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */,
 				57320DCD1DD277AD00BFE7E2 /* AppListaDeCompras */,
 				57320DCC1DD277AD00BFE7E2 /* Products */,
 			);
@@ -179,11 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57320DEA1DD2784700BFE7E2 /* LoginViewController.m in Sources */,
-				57320DF51DD2864500BFE7E2 /* Produto+CoreDataClass.m in Sources */,
-				57320DF61DD2864500BFE7E2 /* Produto+CoreDataProperties.m in Sources */,
 				57320DD31DD277AD00BFE7E2 /* AppDelegate.m in Sources */,
 				57320DDC1DD277AD00BFE7E2 /* AppListaDeCompras.xcdatamodeld in Sources */,
+				57D5DAC51DD3E93000C4FA00 /* Produto+CoreDataClass.m in Sources */,
 				57320DF91DD2874C00BFE7E2 /* TableViewCell.m in Sources */,
+				57D5DAC61DD3E93000C4FA00 /* Produto+CoreDataProperties.m in Sources */,
 				57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */,
 				57320DD01DD277AD00BFE7E2 /* main.m in Sources */,
 				57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */,
@@ -343,6 +343,7 @@
 				57320DE71DD277AD00BFE7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -8,6 +8,7 @@
 
 #import "CadViewController.h"
 #import "AppDelegate.h"
+#import "Produto+CoreDataClass.h"
 
 @interface CadViewController ()
 
@@ -20,6 +21,7 @@
 @implementation CadViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     
     if (self.produto) {
         [self.nome setText:[self.produto valueForKey:@"nome"]];
