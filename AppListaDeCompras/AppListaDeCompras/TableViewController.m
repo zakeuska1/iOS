@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 #import "Produto+CoreDataClass.h"
-#import "TableViewCell.h"
+#import "TableViewCellXib.h"
 #import "CadViewController.h"
 #import "AppDelegate.h"
 
@@ -23,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINib *nib = [UINib nibWithNibName:@"TableViewCellXib" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"CelulaProduto"];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Novo"
                                                                   style:UIBarButtonItemStyleDone
@@ -82,18 +85,13 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"celula"];
-    if(cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"celula" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
+    TableViewCellXib *cell = [tableView dequeueReusableCellWithIdentifier:@"CelulaProduto" forIndexPath:indexPath];
     
     [self configurarCelula:cell noIndexPath:indexPath];
-    
     return cell;
 }
 
-- (void) configurarCelula: (TableViewCell *) cell noIndexPath: (NSIndexPath *) indexPath {
+- (void) configurarCelula: (TableViewCellXib *) cell noIndexPath: (NSIndexPath *) indexPath {
     Produto *produto = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     
