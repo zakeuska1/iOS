@@ -11,11 +11,13 @@
 #import "TableViewCellXib.h"
 #import "CadViewController.h"
 #import "AppDelegate.h"
+#import "UnidadeMedida.h"
 
 
 @interface TableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSMutableData *bytesResposta;
 
 @end
 
@@ -23,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _bytesResposta = [NSMutableData new];
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCellXib" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"CelulaProduto"];
@@ -33,6 +36,57 @@
                                                                  action:@selector(incluirProduto:)];
     
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSURLSessionConfiguration *sc = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sc
+                                                          delegate:self
+                                                     delegateQueue:nil];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL: [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/posts"]];
+    
+    [task resume];
+}
+
+
+#pragma mark - NSURLSessionDelegate
+- (void)URLSession:(NSURLSession *)session
+          dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data {
+    
+    [_bytesResposta appendData:data];
+}
+
+
+- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didCompleteWithError:(nullable NSError *)error{
+    
+    if (error) {
+        NSLog(@"Erro de conexão: %@", error);
+    }else {
+        NSError *erroJSON;
+        
+        NSArray<NSDictionary *> *posts =
+        [NSJSONSerialization JSONObjectWithData:_bytesResposta
+                                        options:kNilOptions
+                                          error:&erroJSON];
+        
+        if (erroJSON) {
+            NSLog(@"JSON recebido é inválido: %@", erroJSON);
+        }else {
+            NSLog(@"Dados recebidos: %@", posts);
+            
+            for (NSDictionary *post in posts) {
+                NSLog(@"Post: %@", [post objectForKey:@"title"]);
+            }
+            
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,6 +137,9 @@
     return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"SegueUpdate" sender:self];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCellXib *cell = [tableView dequeueReusableCellWithIdentifier:@"CelulaProduto" forIndexPath:indexPath];
@@ -94,10 +151,30 @@
 - (void) configurarCelula: (TableViewCellXib *) cell noIndexPath: (NSIndexPath *) indexPath {
     Produto *produto = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    UnidadeMedida unidade = produto.unidMed.integerValue;
+    NSString *strUnidade;
     
+    if (unidade == Quilograma) {
+        strUnidade = @" Kg";
+    } else if (unidade == Grama){
+        strUnidade = @" Gr";
+    } else if (unidade == Unidade){
+        strUnidade = @" Unid";
+    } else if (unidade == Litro){
+        strUnidade = @" L";
+    } else if (unidade == Mililitro){
+        strUnidade = @" Ml";
+    }
+    
+    NSString *str = [produto.quantidade stringValue];
+    
+    str = [str stringByAppendingString:strUnidade];
+    
+    UIImage *foto = [UIImage imageWithData:produto.foto];
+    [cell.imagem setImage:foto];
     [cell.nome setText:produto.nome];
     [cell.marca setText:produto.marca];
-    [cell.quantidade setText:produto.quantidade];
+    [cell.quantidade setText:str];
 }
 
 

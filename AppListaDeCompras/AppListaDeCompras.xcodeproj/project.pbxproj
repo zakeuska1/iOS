@@ -18,8 +18,8 @@
 		57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DFB1DD28A3500BFE7E2 /* CadViewController.m */; };
 		5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */; };
 		5796EA441DE631ED00FB30B6 /* TableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */; };
-		57D5DAC51DD3E93000C4FA00 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */; };
-		57D5DAC61DD3E93000C4FA00 /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */; };
+		5796EA4F1DE6623100FB30B6 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA4C1DE6623100FB30B6 /* Produto+CoreDataClass.m */; };
+		5796EA501DE6623100FB30B6 /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA4E1DE6623100FB30B6 /* Produto+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +41,11 @@
 		5796EA401DE631ED00FB30B6 /* TableViewCellXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellXib.h; sourceTree = "<group>"; };
 		5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellXib.m; sourceTree = "<group>"; };
 		5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellXib.xib; sourceTree = "<group>"; };
-		57D5DAC11DD3E93000C4FA00 /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataClass.h"; sourceTree = "<group>"; };
-		57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataClass.m"; sourceTree = "<group>"; };
-		57D5DAC31DD3E93000C4FA00 /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
-		57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5796EA4B1DE6623100FB30B6 /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataClass.h"; path = "AppListaDeCompras/Produto+CoreDataClass.h"; sourceTree = "<group>"; };
+		5796EA4C1DE6623100FB30B6 /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataClass.m"; path = "AppListaDeCompras/Produto+CoreDataClass.m"; sourceTree = "<group>"; };
+		5796EA4D1DE6623100FB30B6 /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataProperties.h"; path = "AppListaDeCompras/Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5796EA4E1DE6623100FB30B6 /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataProperties.m"; path = "AppListaDeCompras/Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5796EA511DE664D700FB30B6 /* UnidadeMedida.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnidadeMedida.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +62,10 @@
 		57320DC21DD277AD00BFE7E2 = {
 			isa = PBXGroup;
 			children = (
-				57D5DAC11DD3E93000C4FA00 /* Produto+CoreDataClass.h */,
-				57D5DAC21DD3E93000C4FA00 /* Produto+CoreDataClass.m */,
-				57D5DAC31DD3E93000C4FA00 /* Produto+CoreDataProperties.h */,
-				57D5DAC41DD3E93000C4FA00 /* Produto+CoreDataProperties.m */,
+				5796EA4B1DE6623100FB30B6 /* Produto+CoreDataClass.h */,
+				5796EA4C1DE6623100FB30B6 /* Produto+CoreDataClass.m */,
+				5796EA4D1DE6623100FB30B6 /* Produto+CoreDataProperties.h */,
+				5796EA4E1DE6623100FB30B6 /* Produto+CoreDataProperties.m */,
 				57320DCD1DD277AD00BFE7E2 /* AppListaDeCompras */,
 				57320DCC1DD277AD00BFE7E2 /* Products */,
 			);
@@ -106,6 +107,7 @@
 				5796EA401DE631ED00FB30B6 /* TableViewCellXib.h */,
 				5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */,
 				5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */,
+				5796EA511DE664D700FB30B6 /* UnidadeMedida.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,9 +187,9 @@
 				57320DEA1DD2784700BFE7E2 /* LoginViewController.m in Sources */,
 				57320DD31DD277AD00BFE7E2 /* AppDelegate.m in Sources */,
 				57320DDC1DD277AD00BFE7E2 /* AppListaDeCompras.xcdatamodeld in Sources */,
-				57D5DAC51DD3E93000C4FA00 /* Produto+CoreDataClass.m in Sources */,
+				5796EA4F1DE6623100FB30B6 /* Produto+CoreDataClass.m in Sources */,
 				5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */,
-				57D5DAC61DD3E93000C4FA00 /* Produto+CoreDataProperties.m in Sources */,
+				5796EA501DE6623100FB30B6 /* Produto+CoreDataProperties.m in Sources */,
 				57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */,
 				57320DD01DD277AD00BFE7E2 /* main.m in Sources */,
 				57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */,

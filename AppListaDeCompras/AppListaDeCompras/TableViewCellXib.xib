@@ -15,7 +15,7 @@
                 <frame key="frameInset" width="375" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3CF-wT-oDJ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="3CF-wT-oDJ">
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="GWd-uq-eV4"/>
                         </constraints>
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="24.5" y="28.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="camera" width="600" height="600"/>
+    </resources>
 </document>

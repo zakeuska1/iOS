@@ -107,6 +107,7 @@
                     </tableView>
                     <connections>
                         <segue destination="8Dy-Vf-Dwg" kind="show" identifier="SegueInsert" id="fTq-kr-k3M"/>
+                        <segue destination="8Dy-Vf-Dwg" kind="presentation" identifier="SegueUpdate" id="wrO-vY-1F8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rc-95-unR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,18 +134,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jP-th-7xR">
-                                <frame key="frameInset" minX="105" minY="132" width="230" height="30"/>
+                                <frame key="frameInset" minX="105" minY="140" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1 unid." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dub-FL-HM3">
-                                <frame key="frameInset" minX="105" minY="162" width="110" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dub-FL-HM3">
+                                <frame key="frameInset" minX="225" minY="190" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cadastro de Produto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-Dr-zAl">
                                 <frame key="frameInset" minX="69" minY="44" width="237" height="21"/>
@@ -153,12 +154,12 @@
                                 <color key="textColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-w3-9u0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="cw7-w3-9u0">
                                 <frame key="frameInset" minX="16" minY="102" width="81" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-qA-c4h">
-                                <frame key="frameInset" minX="137" minY="225" width="100" height="30"/>
+                                <frame key="frameInset" minX="76" minY="286" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -169,13 +170,39 @@
                                     <action selector="salvar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="eQt-oU-yJ9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLb-pr-D4p">
+                                <frame key="frameInset" minX="198" minY="286" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="hx9-dK-eJC"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="02d-Jk-aia">
+                                <frame key="frameInset" minX="16" minY="228" width="319" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="KG"/>
+                                    <segment title="GR"/>
+                                    <segment title="UNID"/>
+                                    <segment title="L"/>
+                                    <segment title="ML"/>
+                                </segments>
+                                <color key="tintColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.75294117650000003" green="1" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="imagem" destination="cw7-w3-9u0" id="UyS-fH-Qgm"/>
                         <outlet property="marca" destination="5jP-th-7xR" id="GmM-dc-HrA"/>
                         <outlet property="nome" destination="1ou-oR-ozH" id="Jcm-6u-deE"/>
                         <outlet property="quantidade" destination="dub-FL-HM3" id="EQA-tH-AjD"/>
+                        <outlet property="unidMed" destination="02d-Jk-aia" id="OjO-9v-a0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zu-Iz-zdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -489,8 +516,10 @@
         <image name="Cesta" width="250" height="250"/>
         <image name="Seta" width="244" height="244"/>
         <image name="Seta_down" width="244" height="244"/>
+        <image name="camera" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wrO-vY-1F8"/>
         <segue reference="Ffm-ZS-Zcb"/>
     </inferredMetricsTieBreakers>
 </document>

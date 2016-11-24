@@ -4,9 +4,10 @@
         <attribute name="foto" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="marca" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="quantidade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="unidMed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Produto" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Produto" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

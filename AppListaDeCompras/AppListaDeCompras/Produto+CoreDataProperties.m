@@ -2,7 +2,7 @@
 //  Produto+CoreDataProperties.m
 //  AppListaDeCompras
 //
-//  Created by ALUNO on 09/11/16.
+//  Created by ALUNO on 23/11/16.
 //  Copyright © 2016 IESB. All rights reserved.
 //
 
@@ -14,9 +14,10 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Produto"];
 }
 
+@dynamic foto;
 @dynamic marca;
 @dynamic nome;
 @dynamic quantidade;
-@dynamic foto;
+@dynamic unidMed;
 
 @end
