@@ -17,7 +17,7 @@
 @interface TableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSMutableData *bytesResposta;
+
 
 @end
 
@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _bytesResposta = [NSMutableData new];
+    
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCellXib" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"CelulaProduto"];
@@ -41,52 +41,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSURLSessionConfiguration *sc = [NSURLSessionConfiguration defaultSessionConfiguration];
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sc
-                                                          delegate:self
-                                                     delegateQueue:nil];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithURL: [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/posts"]];
-    
-    [task resume];
-}
-
-
-#pragma mark - NSURLSessionDelegate
-- (void)URLSession:(NSURLSession *)session
-          dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data {
-    
-    [_bytesResposta appendData:data];
-}
-
-
-- (void)URLSession:(NSURLSession *)session
-              task:(NSURLSessionTask *)task
-didCompleteWithError:(nullable NSError *)error{
-    
-    if (error) {
-        NSLog(@"Erro de conexão: %@", error);
-    }else {
-        NSError *erroJSON;
-        
-        NSArray<NSDictionary *> *posts =
-        [NSJSONSerialization JSONObjectWithData:_bytesResposta
-                                        options:kNilOptions
-                                          error:&erroJSON];
-        
-        if (erroJSON) {
-            NSLog(@"JSON recebido é inválido: %@", erroJSON);
-        }else {
-            NSLog(@"Dados recebidos: %@", posts);
-            
-            for (NSDictionary *post in posts) {
-                NSLog(@"Post: %@", [post objectForKey:@"title"]);
-            }
-            
-        }
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -108,13 +63,13 @@ didCompleteWithError:(nullable NSError *)error{
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
         AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSPersistentContainer *container = delegate.persistentContainer;
+        //NSPersistentContainer *container = delegate.persistentContainer;
         
         NSFetchRequest *fetchRequest = [Produto fetchRequest];
         [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES]]];
         
         _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                        managedObjectContext:container.viewContext
+                                                                        managedObjectContext:delegate.managedObjectContext
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
         [_fetchedResultsController setDelegate:self];

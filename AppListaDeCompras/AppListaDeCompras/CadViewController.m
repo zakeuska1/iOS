@@ -88,8 +88,7 @@
 
 - (IBAction)salvar:(id)sender {
     AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSPersistentContainer *container = delegate.persistentContainer;
-    NSManagedObjectContext *context = container.viewContext;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
     
     NSString *texto = self.quantidade.text;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

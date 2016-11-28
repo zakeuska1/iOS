@@ -45,5 +45,10 @@
 	<string>Acessando a Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Acessando a Biblioteca</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
