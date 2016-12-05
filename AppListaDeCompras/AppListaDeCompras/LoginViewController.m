@@ -20,25 +20,32 @@
 @end
 
 @implementation LoginViewController
+static NSString * const kChaveBancoCarregado = @"bancoCarregado";
 
 - (void)viewDidLoad {
-    _bytesResposta = [NSMutableData new];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSURLSessionConfiguration *sc = [NSURLSessionConfiguration defaultSessionConfiguration];
     
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:sc
-                                                          delegate:self
-                                                     delegateQueue:nil];
+    BOOL bancoCarregado = [[NSUserDefaults standardUserDefaults] boolForKey:kChaveBancoCarregado];
     
-    NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/users"]];
-    
-    [taskProdutos resume];
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    if (!bancoCarregado) {
+        self.bytesResposta = [NSMutableData new];
+        
+        NSURLSessionConfiguration *sc = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sc
+                                                              delegate:self
+                                                         delegateQueue:nil];
+        
+        NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/users"]];
+        
+        [taskProdutos resume];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }
 }
 
 - (IBAction)validarLogin:(id)sender {
@@ -102,7 +109,7 @@
             AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
             NSManagedObjectContext *context = delegate.managedObjectContext;
             
-            //LIMPA OS CONTATOS DO CORE DATA
+            //LIMPA OS PRODUTOS DO COREDATA
             NSError *erroFetch;
             NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Produto"];
             NSArray *produtos = [context executeFetchRequest:fr error:&erroFetch];
@@ -126,6 +133,7 @@
             for(NSDictionary *produto in produtosRecebidos) {
                 //DOWNLOAD DA FOTO
                 NSURLSessionDownloadTask *taskFoto = [session downloadTaskWithURL:[NSURL URLWithString:@"http://www.lorempixel.com/128/128/people"] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error){
+                    
                     if(error) {
                         //NSLog(@"Falha ao baixar a foto: %@", error);
                         
@@ -136,8 +144,9 @@
                         [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                             style:UIAlertActionStyleCancel
                                                                           handler:nil]];
-                    }
-                    else {
+                    } else {
+                        
+                        
                         Produto *novoProduto = [NSEntityDescription insertNewObjectForEntityForName:@"Produto" inManagedObjectContext:context];
                         
                         // Input
@@ -167,7 +176,6 @@
                         [novoProduto setNome:[produto objectForKey:@"name"]];
                         [novoProduto setMarca:[produto objectForKey:@"email"]];
                         [novoProduto setQuantidade:qtd];
-                        
                     }
                 }];
                 
@@ -188,11 +196,15 @@
                 [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                     style:UIAlertActionStyleCancel
                                                                   handler:nil]];
+                
+                NSLog(@"Erro ao realizar carga inicial: %@", erroCoreData);
+                
+            } else {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kChaveBancoCarregado];
             }
         }
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
