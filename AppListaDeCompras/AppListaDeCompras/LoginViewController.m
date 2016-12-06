@@ -10,24 +10,41 @@
 #import "Produto+CoreDataClass.h"
 #import "AppDelegate.h"
 
-@interface LoginViewController () <NSURLSessionDataDelegate>
+@interface LoginViewController () <NSURLSessionDataDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usuario;
 @property (weak, nonatomic) IBOutlet UITextField *senha;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *entrar;
 
 @property (strong, nonatomic) NSMutableData *bytesResposta;
 
 @end
 
 @implementation LoginViewController
+
 static NSString * const kChaveBancoCarregado = @"bancoCarregado";
+CGFloat valorOriginalConstanteBotaoEntrar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    valorOriginalConstanteBotaoEntrar = self.entrar.constant;
+    
+    [self.usuario setDelegate:self];
+    [self.senha setDelegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tecladoApareceu:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tecladoSumiu:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
     
     BOOL bancoCarregado = [[NSUserDefaults standardUserDefaults] boolForKey:kChaveBancoCarregado];
     
@@ -48,6 +65,31 @@ static NSString * const kChaveBancoCarregado = @"bancoCarregado";
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
+}
+
+- (void) tecladoApareceu: (NSNotification *) sender {
+    NSDictionary* dicionarioDeInformacoesSobreTeclado = [sender userInfo];
+    CGRect frameDoTeclado = [[dicionarioDeInformacoesSobreTeclado valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    [self.entrar setConstant: (valorOriginalConstanteBotaoEntrar + frameDoTeclado.size.height)];
+    
+}
+
+- (void) tecladoSumiu: (NSNotification *) sender {
+    [self.entrar setConstant:valorOriginalConstanteBotaoEntrar];
+}
+
+
 - (IBAction)validarLogin:(id)sender {
     
     //excluir após descomentar
@@ -58,15 +100,15 @@ static NSString * const kChaveBancoCarregado = @"bancoCarregado";
     //
     //
     //
-   // if ([self.usuario.text isEqualToString: @"zacarias"] && [self.senha.text isEqualToString: @"junior"]){
-   //     [self performSegueWithIdentifier:@"PrimeiraParaSegunda" sender:nil];
-   // } else {
-     //   UIAlertController *msgFalha = [UIAlertController alertControllerWithTitle:@"Falha ao logar" message:@"Usuário ou senha Incorreto" preferredStyle:UIAlertControllerStyleAlert];
+    // if ([self.usuario.text isEqualToString: @"zacarias"] && [self.senha.text isEqualToString: @"junior"]){
+    //     [self performSegueWithIdentifier:@"PrimeiraParaSegunda" sender:nil];
+    // } else {
+    //   UIAlertController *msgFalha = [UIAlertController alertControllerWithTitle:@"Falha ao logar" message:@"Usuário ou senha Incorreto" preferredStyle:UIAlertControllerStyleAlert];
         
-      //  UIAlertAction * ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-      //  [msgFalha addAction:ok];
+    //  UIAlertAction * ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    //  [msgFalha addAction:ok];
         
-      //  [self presentViewController:msgFalha animated:YES completion:nil];
+    //  [self presentViewController:msgFalha animated:YES completion:nil];
     //}
 }
 
