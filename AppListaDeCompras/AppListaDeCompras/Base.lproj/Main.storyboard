@@ -176,20 +176,8 @@
                                     <constraint firstAttribute="width" constant="81" id="fkh-iQ-3qh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-qA-c4h">
-                                <frame key="frameInset" minX="76" minY="286" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Salvar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="salvar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="eQt-oU-yJ9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLb-pr-D4p">
-                                <frame key="frameInset" minX="198" minY="286" width="100" height="30"/>
+                                <frame key="frameInset" minX="184" minY="349" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -212,6 +200,31 @@
                                 </segments>
                                 <color key="tintColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvY-Eo-xGU">
+                                <frame key="frameInset" minX="235" minY="272" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Mapa">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="abrirMapa:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="xIr-gF-Z1K"/>
+                                    <action selector="salvar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="P5y-id-fGO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-qA-c4h">
+                                <frame key="frameInset" minX="82" minY="349" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="salvar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="eQt-oU-yJ9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.75294117650000003" green="1" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -229,11 +242,42 @@
                         <outlet property="nome" destination="1ou-oR-ozH" id="Jcm-6u-deE"/>
                         <outlet property="quantidade" destination="dub-FL-HM3" id="EQA-tH-AjD"/>
                         <outlet property="unidMed" destination="02d-Jk-aia" id="OjO-9v-a0H"/>
+                        <segue destination="2f0-Bk-uhg" kind="show" identifier="segueAbreMapa" id="3PG-KQ-w4I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zu-Iz-zdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="869"/>
+            <point key="canvasLocation" x="1898" y="869"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Gib-xm-Ajr">
+            <objects>
+                <viewController id="2f0-Bk-uhg" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DAE-dp-UlK"/>
+                        <viewControllerLayoutGuide type="bottom" id="rYN-IK-eSL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ayh-X2-duF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-b2-GAN">
+                                <frame key="frameInset" minY="607" width="375" height="60"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="X6O-b2-GAN" secondAttribute="trailing" id="EWi-JH-RMh"/>
+                            <constraint firstItem="rYN-IK-eSL" firstAttribute="top" secondItem="X6O-b2-GAN" secondAttribute="bottom" id="Mhn-c5-zTt"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="leading" secondItem="ayh-X2-duF" secondAttribute="leading" id="NXO-zr-v1R"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="top" secondItem="DAE-dp-UlK" secondAttribute="bottom" id="crp-ed-Jyq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="4rm-vx-anq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kup-WU-94d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2664.8000000000002" y="868.51574212893559"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iTY-oE-9bh">

@@ -16,6 +16,7 @@
 		57320DEA1DD2784700BFE7E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DE91DD2784700BFE7E2 /* LoginViewController.m */; };
 		57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DEF1DD2832800BFE7E2 /* TableViewController.m */; };
 		57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DFB1DD28A3500BFE7E2 /* CadViewController.m */; };
+		573CB9861DF8BDC8008FA1E9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573CB9851DF8BDC8008FA1E9 /* MapViewController.m */; };
 		5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */; };
 		5796EA441DE631ED00FB30B6 /* TableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */; };
 		5796EA4F1DE6623100FB30B6 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA4C1DE6623100FB30B6 /* Produto+CoreDataClass.m */; };
@@ -38,6 +39,8 @@
 		57320DEF1DD2832800BFE7E2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		57320DFA1DD28A3500BFE7E2 /* CadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadViewController.h; sourceTree = "<group>"; };
 		57320DFB1DD28A3500BFE7E2 /* CadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadViewController.m; sourceTree = "<group>"; };
+		573CB9841DF8BDC8008FA1E9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		573CB9851DF8BDC8008FA1E9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		5796EA401DE631ED00FB30B6 /* TableViewCellXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellXib.h; sourceTree = "<group>"; };
 		5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellXib.m; sourceTree = "<group>"; };
 		5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellXib.xib; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */,
 				5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */,
 				5796EA511DE664D700FB30B6 /* UnidadeMedida.h */,
+				573CB9841DF8BDC8008FA1E9 /* MapViewController.h */,
+				573CB9851DF8BDC8008FA1E9 /* MapViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */,
 				5796EA501DE6623100FB30B6 /* Produto+CoreDataProperties.m in Sources */,
 				57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */,
+				573CB9861DF8BDC8008FA1E9 /* MapViewController.m in Sources */,
 				57320DD01DD277AD00BFE7E2 /* main.m in Sources */,
 				57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */,
 			);

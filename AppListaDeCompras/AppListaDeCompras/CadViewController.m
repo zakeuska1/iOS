@@ -210,6 +210,9 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
 }
+- (IBAction)abrirMapa:(id)sender {
+    [self performSegueWithIdentifier:@"segueAbreMapa" sender:nil];
+}
 
 
 - (void)didReceiveMemoryWarning {

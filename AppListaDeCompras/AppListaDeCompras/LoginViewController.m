@@ -151,77 +151,40 @@ CGFloat valorOriginalConstanteBotaoEntrar;
             AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
             NSManagedObjectContext *context = delegate.managedObjectContext;
             
-            //LIMPA OS PRODUTOS DO COREDATA
-            NSError *erroFetch;
-            NSFetchRequest *fr = [NSFetchRequest fetchRequestWithEntityName:@"Produto"];
-            NSArray *produtos = [context executeFetchRequest:fr error:&erroFetch];
-            if(erroFetch) {
-                
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Erro"
-                                                                                         message:@"Ocorreu um erro ao obter os produtos do banco de dados."
-                                                                                  preferredStyle:UIAlertControllerStyleAlert];
-                
-                [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
-                                                                    style:UIAlertActionStyleCancel
-                                                                  handler:nil]];
-            }
-            else {
-                for(Produto *produto in produtos) {
-                    [context deleteObject:produto];
-                }
-            }
             
             //PERCORRE OS CONTATOS RECEBIDOS SALVANDO NO BANCO DE DADOS
             for(NSDictionary *produto in produtosRecebidos) {
-                //DOWNLOAD DA FOTO
-                NSURLSessionDownloadTask *taskFoto = [session downloadTaskWithURL:[NSURL URLWithString:@"http://www.lorempixel.com/128/128/people"] completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error){
-                    
-                    if(error) {
-                        //NSLog(@"Falha ao baixar a foto: %@", error);
-                        
-                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Erro"
-                                                                                                 message:@"Ocorreu um erro ao baixar a imagem do produto."
-                                                                                          preferredStyle:UIAlertControllerStyleAlert];
-                        
-                        [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
-                                                                            style:UIAlertActionStyleCancel
-                                                                          handler:nil]];
-                    } else {
-                        
-                        
-                        Produto *novoProduto = [NSEntityDescription insertNewObjectForEntityForName:@"Produto" inManagedObjectContext:context];
-                        
-                        // Input
-                        NSString *originalString = [produto objectForKey:@"phone"];
-                        
-                        // Intermediate
-                        NSString *numberString;
-                        
-                        NSScanner *scanner = [NSScanner scannerWithString:originalString];
-                        NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-                        
-                        // Throw away characters before the first number.
-                        [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-                        
-                        // Collect numbers.
-                        [scanner scanCharactersFromSet:numbers intoString:&numberString];
-
-                        NSString *texto = numberString;
-                        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-                        [formatter setNumberStyle:NSNumberFormatterNoStyle];
-                        
-                        NSNumber *qtd = [formatter numberFromString:texto];
-
-                        
-                        
-                        [novoProduto setFoto:[NSData dataWithContentsOfURL:location]];
-                        [novoProduto setNome:[produto objectForKey:@"name"]];
-                        [novoProduto setMarca:[produto objectForKey:@"email"]];
-                        [novoProduto setQuantidade:qtd];
-                    }
-                }];
                 
-                [taskFoto resume];
+                Produto *novoProduto = [NSEntityDescription insertNewObjectForEntityForName:@"Produto" inManagedObjectContext:context];
+                
+                // Input
+                NSString *originalString = [produto objectForKey:@"phone"];
+                
+                // Intermediate
+                NSString *numberString;
+                
+                NSScanner *scanner = [NSScanner scannerWithString:originalString];
+                NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+                
+                // Throw away characters before the first number.
+                [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+                
+                // Collect numbers.
+                [scanner scanCharactersFromSet:numbers intoString:&numberString];
+                
+                NSString *texto = numberString;
+                NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+                [formatter setNumberStyle:NSNumberFormatterNoStyle];
+                
+                NSNumber *qtd = [formatter numberFromString:texto];
+                
+                
+                
+                [novoProduto setFoto:[produto objectForKey:@"foto"]];
+                [novoProduto setNome:[produto objectForKey:@"name"]];
+                [novoProduto setMarca:[produto objectForKey:@"email"]];
+                [novoProduto setQuantidade:qtd];
+
             }
             
             //OCULTAR O NETWORK ACTIVITY INDICATION
