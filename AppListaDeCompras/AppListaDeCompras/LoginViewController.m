@@ -57,7 +57,7 @@ CGFloat valorOriginalConstanteBotaoEntrar;
                                                               delegate:self
                                                          delegateQueue:nil];
         
-        NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"http://jsonplaceholder.typicode.com/users"]];
+        NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"https://randomuser.me/api/?results=10"]];
         
         [taskProdutos resume];
         
@@ -120,6 +120,7 @@ CGFloat valorOriginalConstanteBotaoEntrar;
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error{
     
     if(error) {
+
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Falha ao Obter Dados"
                                                                                  message:@"Ocorreu um erro ao obter os dados dos produtos"
                                                                           preferredStyle:UIAlertControllerStyleAlert];
@@ -153,7 +154,18 @@ CGFloat valorOriginalConstanteBotaoEntrar;
             
             
             //PERCORRE OS CONTATOS RECEBIDOS SALVANDO NO BANCO DE DADOS
-            for(NSDictionary *produto in produtosRecebidos) {
+            
+            //NSLog(@"\n\n\n%@\n\n\n",produtosRecebidos);
+            
+            
+            for (NSDictionary *resultado in produtosRecebidos){
+                NSLog(@"\n\n\n\n%@\n\n\n\n",resultado);
+            }
+            
+            
+            NSDictionary *results = [produtosRecebidos objectAtIndex:0];
+            
+            for(NSDictionary *produto in results) {
                 
                 Produto *novoProduto = [NSEntityDescription insertNewObjectForEntityForName:@"Produto" inManagedObjectContext:context];
                 
@@ -180,7 +192,7 @@ CGFloat valorOriginalConstanteBotaoEntrar;
                 
                 
                 
-                [novoProduto setFoto:[produto objectForKey:@"foto"]];
+                //[novoProduto setFoto:[produto objectForKey:@"foto"]];
                 [novoProduto setNome:[produto objectForKey:@"name"]];
                 [novoProduto setMarca:[produto objectForKey:@"email"]];
                 [novoProduto setQuantidade:qtd];
