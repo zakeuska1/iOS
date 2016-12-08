@@ -265,19 +265,20 @@
                         <viewControllerLayoutGuide type="bottom" id="rYN-IK-eSL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ayh-X2-duF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-b2-GAN"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="X6O-b2-GAN" secondAttribute="trailing" id="EWi-JH-RMh"/>
-                            <constraint firstItem="rYN-IK-eSL" firstAttribute="top" secondItem="X6O-b2-GAN" secondAttribute="bottom" id="Mhn-c5-zTt"/>
-                            <constraint firstItem="X6O-b2-GAN" firstAttribute="leading" secondItem="ayh-X2-duF" secondAttribute="leading" id="NXO-zr-v1R"/>
-                            <constraint firstItem="X6O-b2-GAN" firstAttribute="top" secondItem="DAE-dp-UlK" secondAttribute="bottom" id="crp-ed-Jyq"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="leading" secondItem="ayh-X2-duF" secondAttribute="leading" id="5C3-hi-cHZ"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="top" secondItem="DAE-dp-UlK" secondAttribute="bottom" id="Edv-O1-QO4"/>
+                            <constraint firstAttribute="bottom" secondItem="X6O-b2-GAN" secondAttribute="bottom" id="Mck-kJ-Zb6"/>
+                            <constraint firstAttribute="trailing" secondItem="X6O-b2-GAN" secondAttribute="trailing" id="gWB-J0-mrm"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kup-WU-94d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,7 +566,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="199" y="-21"/>
+            <point key="canvasLocation" x="119" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hNS-xY-KFB">
@@ -605,13 +606,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cesta" width="250" height="250"/>
-        <image name="Seta" width="244" height="244"/>
-        <image name="Seta_down" width="244" height="244"/>
-        <image name="camera" width="600" height="600"/>
+        <image name="Cesta" width="125" height="125"/>
+        <image name="Seta" width="122" height="122"/>
+        <image name="Seta_down" width="122" height="122"/>
+        <image name="camera" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oza-ud-XnS"/>
+        <segue reference="lWp-jD-QiY"/>
         <segue reference="wrO-vY-1F8"/>
     </inferredMetricsTieBreakers>
 </document>

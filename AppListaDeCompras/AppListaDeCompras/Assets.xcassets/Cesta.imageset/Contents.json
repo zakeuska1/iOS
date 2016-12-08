@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Cesta.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Cesta.png",
       "scale" : "2x"
     },
     {

@@ -133,7 +133,7 @@ CGFloat valorOriginalConstanteBotaoEntrar;
     else {
         NSError *erroJSON;
         
-        NSArray<NSDictionary *> *produtosRecebidos = [NSJSONSerialization JSONObjectWithData:self.bytesResposta
+        NSDictionary *produtosRecebidos = [NSJSONSerialization JSONObjectWithData:self.bytesResposta
                                                                                      options:kNilOptions
                                                                                        error:&erroJSON];
         
@@ -153,17 +153,8 @@ CGFloat valorOriginalConstanteBotaoEntrar;
             NSManagedObjectContext *context = delegate.managedObjectContext;
             
             
-            //PERCORRE OS CONTATOS RECEBIDOS SALVANDO NO BANCO DE DADOS
+            NSArray *results = produtosRecebidos[@"results"];
             
-            //NSLog(@"\n\n\n%@\n\n\n",produtosRecebidos);
-            
-            
-            for (NSDictionary *resultado in produtosRecebidos){
-                NSLog(@"\n\n\n\n%@\n\n\n\n",resultado);
-            }
-            
-            
-            NSDictionary *results = [produtosRecebidos objectAtIndex:0];
             
             for(NSDictionary *produto in results) {
                 
@@ -192,8 +183,8 @@ CGFloat valorOriginalConstanteBotaoEntrar;
                 
                 
                 
-                //[novoProduto setFoto:[produto objectForKey:@"foto"]];
-                [novoProduto setNome:[produto objectForKey:@"name"]];
+                [novoProduto setFoto:[[produto objectForKey:@"picture"] objectForKey:@"thumbnail"]];
+                [novoProduto setNome:[[produto objectForKey:@"name"] objectForKey:@"first"]];
                 [novoProduto setMarca:[produto objectForKey:@"email"]];
                 [novoProduto setQuantidade:qtd];
 
