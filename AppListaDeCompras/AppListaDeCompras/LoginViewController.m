@@ -183,10 +183,11 @@ CGFloat valorOriginalConstanteBotaoEntrar;
                 
                 
                 
+                NSString *foto = [produto objectForKey:@"foto"];
+                foto = [[foto componentsSeparatedByString:@","] lastObject];
+                NSData *bytes = [[NSData alloc] initWithBase64EncodedString:foto options:kNilOptions];
                 
-                
-                
-                [novoProduto setFoto:[NSData dataWithContentsOfFile:[produto objectForKey:@"foto"]]];
+                [novoProduto setFoto:bytes];
                 [novoProduto setNome:[produto objectForKey:@"nome"]];
                 [novoProduto setMarca:[produto objectForKey:@"marca"]];
                 [novoProduto setQuantidade:[produto objectForKey:@"quantidade"]];
