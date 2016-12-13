@@ -2,7 +2,7 @@
 //  Produto+CoreDataProperties.h
 //  AppListaDeCompras
 //
-//  Created by ALUNO on 07/12/16.
+//  Created by ALUNO on 12/12/16.
 //  Copyright © 2016 IESB. All rights reserved.
 //
 
@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSData *foto;
 @property (nullable, nonatomic, copy) NSString *marca;
 @property (nullable, nonatomic, copy) NSString *nome;
-@property (nonatomic) int16_t quantidade;
-@property (nonatomic) int16_t unidMed;
+@property (nullable, nonatomic, copy) NSNumber *quantidade;
+@property (nullable, nonatomic, copy) NSNumber *unidMed;
 
 @end
 

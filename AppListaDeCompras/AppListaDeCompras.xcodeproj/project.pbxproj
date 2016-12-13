@@ -17,10 +17,10 @@
 		57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DEF1DD2832800BFE7E2 /* TableViewController.m */; };
 		57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57320DFB1DD28A3500BFE7E2 /* CadViewController.m */; };
 		573CB9861DF8BDC8008FA1E9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573CB9851DF8BDC8008FA1E9 /* MapViewController.m */; };
-		573CB9971DF8E532008FA1E9 /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 573CB9941DF8E532008FA1E9 /* Produto+CoreDataClass.m */; };
-		573CB9981DF8E532008FA1E9 /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 573CB9961DF8E532008FA1E9 /* Produto+CoreDataProperties.m */; };
 		5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */; };
 		5796EA441DE631ED00FB30B6 /* TableViewCellXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */; };
+		57F9A77F1DFF5BC500BB959D /* Produto+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F9A77C1DFF5BC500BB959D /* Produto+CoreDataClass.m */; };
+		57F9A7801DFF5BC500BB959D /* Produto+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F9A77E1DFF5BC500BB959D /* Produto+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,14 +41,14 @@
 		57320DFB1DD28A3500BFE7E2 /* CadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadViewController.m; sourceTree = "<group>"; };
 		573CB9841DF8BDC8008FA1E9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		573CB9851DF8BDC8008FA1E9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		573CB9931DF8E532008FA1E9 /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataClass.h"; path = "AppListaDeCompras/Produto+CoreDataClass.h"; sourceTree = "<group>"; };
-		573CB9941DF8E532008FA1E9 /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataClass.m"; path = "AppListaDeCompras/Produto+CoreDataClass.m"; sourceTree = "<group>"; };
-		573CB9951DF8E532008FA1E9 /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataProperties.h"; path = "AppListaDeCompras/Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
-		573CB9961DF8E532008FA1E9 /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataProperties.m"; path = "AppListaDeCompras/Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5796EA401DE631ED00FB30B6 /* TableViewCellXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellXib.h; sourceTree = "<group>"; };
 		5796EA411DE631ED00FB30B6 /* TableViewCellXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellXib.m; sourceTree = "<group>"; };
 		5796EA421DE631ED00FB30B6 /* TableViewCellXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellXib.xib; sourceTree = "<group>"; };
 		5796EA511DE664D700FB30B6 /* UnidadeMedida.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnidadeMedida.h; sourceTree = "<group>"; };
+		57F9A77B1DFF5BC500BB959D /* Produto+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataClass.h"; path = "AppListaDeCompras/Produto+CoreDataClass.h"; sourceTree = "<group>"; };
+		57F9A77C1DFF5BC500BB959D /* Produto+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataClass.m"; path = "AppListaDeCompras/Produto+CoreDataClass.m"; sourceTree = "<group>"; };
+		57F9A77D1DFF5BC500BB959D /* Produto+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Produto+CoreDataProperties.h"; path = "AppListaDeCompras/Produto+CoreDataProperties.h"; sourceTree = "<group>"; };
+		57F9A77E1DFF5BC500BB959D /* Produto+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Produto+CoreDataProperties.m"; path = "AppListaDeCompras/Produto+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +65,10 @@
 		57320DC21DD277AD00BFE7E2 = {
 			isa = PBXGroup;
 			children = (
-				573CB9931DF8E532008FA1E9 /* Produto+CoreDataClass.h */,
-				573CB9941DF8E532008FA1E9 /* Produto+CoreDataClass.m */,
-				573CB9951DF8E532008FA1E9 /* Produto+CoreDataProperties.h */,
-				573CB9961DF8E532008FA1E9 /* Produto+CoreDataProperties.m */,
+				57F9A77B1DFF5BC500BB959D /* Produto+CoreDataClass.h */,
+				57F9A77C1DFF5BC500BB959D /* Produto+CoreDataClass.m */,
+				57F9A77D1DFF5BC500BB959D /* Produto+CoreDataProperties.h */,
+				57F9A77E1DFF5BC500BB959D /* Produto+CoreDataProperties.m */,
 				57320DCD1DD277AD00BFE7E2 /* AppListaDeCompras */,
 				57320DCC1DD277AD00BFE7E2 /* Products */,
 			);
@@ -192,12 +192,12 @@
 				57320DEA1DD2784700BFE7E2 /* LoginViewController.m in Sources */,
 				57320DD31DD277AD00BFE7E2 /* AppDelegate.m in Sources */,
 				57320DDC1DD277AD00BFE7E2 /* AppListaDeCompras.xcdatamodeld in Sources */,
-				573CB9981DF8E532008FA1E9 /* Produto+CoreDataProperties.m in Sources */,
+				57F9A7801DFF5BC500BB959D /* Produto+CoreDataProperties.m in Sources */,
 				5796EA431DE631ED00FB30B6 /* TableViewCellXib.m in Sources */,
 				57320DF01DD2832800BFE7E2 /* TableViewController.m in Sources */,
 				573CB9861DF8BDC8008FA1E9 /* MapViewController.m in Sources */,
 				57320DD01DD277AD00BFE7E2 /* main.m in Sources */,
-				573CB9971DF8E532008FA1E9 /* Produto+CoreDataClass.m in Sources */,
+				57F9A77F1DFF5BC500BB959D /* Produto+CoreDataClass.m in Sources */,
 				57320DFC1DD28A3500BFE7E2 /* CadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,7 +57,7 @@ CGFloat valorOriginalConstanteBotaoEntrar;
                                                               delegate:self
                                                          delegateQueue:nil];
         
-        NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"https://randomuser.me/api/?results=10"]];
+        NSURLSessionDataTask *taskProdutos = [session dataTaskWithURL: [NSURL URLWithString:@"https://mockaroo.com/9bf8ce80/download?count=10&key=9bcfbc80"]];
         
         [taskProdutos resume];
         
@@ -153,40 +153,43 @@ CGFloat valorOriginalConstanteBotaoEntrar;
             NSManagedObjectContext *context = delegate.managedObjectContext;
             
             
-            NSArray *results = produtosRecebidos[@"results"];
             
             
-            for(NSDictionary *produto in results) {
+            
+            for(NSDictionary *produto in produtosRecebidos) {
                 
                 Produto *novoProduto = [NSEntityDescription insertNewObjectForEntityForName:@"Produto" inManagedObjectContext:context];
                 
                 // Input
-                NSString *originalString = [produto objectForKey:@"phone"];
+                //NSString *originalString = [produto objectForKey:@"quantidade"];
                 
                 // Intermediate
-                NSString *numberString;
+                //NSString *numberString;
                 
-                NSScanner *scanner = [NSScanner scannerWithString:originalString];
-                NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+                //NSScanner *scanner = [NSScanner scannerWithString:originalString];
+                //NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
                 
                 // Throw away characters before the first number.
-                [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+                //[scanner scanUpToCharactersFromSet:numbers intoString:NULL];
                 
                 // Collect numbers.
-                [scanner scanCharactersFromSet:numbers intoString:&numberString];
+                //[scanner scanCharactersFromSet:numbers intoString:&numberString];
                 
-                NSString *texto = numberString;
-                NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-                [formatter setNumberStyle:NSNumberFormatterNoStyle];
+                //NSString *texto = numberString;
+                //NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+                //[formatter setNumberStyle:NSNumberFormatterNoStyle];
                 
-                NSNumber *qtd = [formatter numberFromString:texto];
+                //NSNumber *qtd = [formatter numberFromString:texto];
                 
                 
                 
-                [novoProduto setFoto:[[produto objectForKey:@"picture"] objectForKey:@"thumbnail"]];
-                [novoProduto setNome:[[produto objectForKey:@"name"] objectForKey:@"first"]];
-                [novoProduto setMarca:[produto objectForKey:@"email"]];
-                [novoProduto setQuantidade:qtd];
+                
+                
+                
+                [novoProduto setFoto:[NSData dataWithContentsOfFile:[produto objectForKey:@"foto"]]];
+                [novoProduto setNome:[produto objectForKey:@"nome"]];
+                [novoProduto setMarca:[produto objectForKey:@"marca"]];
+                [novoProduto setQuantidade:[produto objectForKey:@"quantidade"]];
 
             }
             
@@ -195,7 +198,6 @@ CGFloat valorOriginalConstanteBotaoEntrar;
             
             NSError *erroCoreData;
             if (![context save:&erroCoreData]) {
-                //NSLog(@"\n\n\nErro ao salvar o contato! %@\n\n\n", erroCoreData);
                 
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Erro"
                                                                                          message:@"Ocorreu um erro ao salvar os produtos recebidos."

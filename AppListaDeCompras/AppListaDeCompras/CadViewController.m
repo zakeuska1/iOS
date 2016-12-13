@@ -22,13 +22,18 @@
 @property (weak, nonatomic) IBOutlet UITextField *quantidade;
 @property (weak, nonatomic) IBOutlet UIImageView *imagem;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *unidMed;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *salvar;
 
 @end
 
 @implementation CadViewController
 
+CGFloat valorOriginalConstanteBotaoSalvar;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    valorOriginalConstanteBotaoSalvar = self.salvar.constant;
     
     UITapGestureRecognizer *onTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onEscolherFoto)];
     
@@ -47,6 +52,31 @@
     [self.quantidade setDelegate:self];
     
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tecladoApareceu:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(tecladoSumiu:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+}
+
+- (void) tecladoApareceu: (NSNotification *) sender {
+    NSDictionary* dicionarioDeInformacoesSobreTeclado = [sender userInfo];
+    CGRect frameDoTeclado = [[dicionarioDeInformacoesSobreTeclado valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    [self.salvar setConstant: (valorOriginalConstanteBotaoSalvar + frameDoTeclado.size.height)];
+    
+}
+
+- (void) tecladoSumiu: (NSNotification *) sender {
+    [self.salvar setConstant:valorOriginalConstanteBotaoSalvar];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -104,7 +134,7 @@
         [self.produto setNome:self.nome.text];
         [self.produto setMarca:self.marca.text];
         [self.produto setQuantidade:qtd];
-        [self.produto setUnidMed:[NSNumber numberWithInteger:unidade]];
+        [self.produto setUnidMed:[NSNumber numberWithUnsignedInteger:unidade]];
         
     }
     else {

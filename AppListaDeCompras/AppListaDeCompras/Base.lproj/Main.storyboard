@@ -138,21 +138,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Produto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ou-oR-ozH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wtn-oU-Fo0"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jP-th-7xR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pIm-AX-vhF"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dub-FL-HM3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QCi-jJ-HZ8"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastro de Produto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-Dr-zAl">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fh4-Dr-zAl" secondAttribute="height" multiplier="237:29" id="Mgw-HZ-Qu8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -179,6 +191,9 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="02d-Jk-aia">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="02d-Jk-aia" secondAttribute="height" multiplier="117:14" id="ZOE-vv-Xb1"/>
+                                </constraints>
                                 <segments>
                                     <segment title="KG"/>
                                     <segment title="GR"/>
@@ -192,6 +207,7 @@
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.4039215686" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9yr-vT-aUM"/>
+                                    <constraint firstAttribute="width" secondItem="nvY-Eo-xGU" secondAttribute="height" multiplier="10:3" id="gYD-eW-uKj"/>
                                     <constraint firstAttribute="width" constant="100" id="vgy-IS-xDw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -223,11 +239,13 @@
                             <constraint firstItem="1ou-oR-ozH" firstAttribute="top" secondItem="Fh4-Dr-zAl" secondAttribute="bottom" constant="16" id="82k-iX-Gwv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="02d-Jk-aia" secondAttribute="trailing" constant="4" id="AAk-VC-ljJ"/>
                             <constraint firstItem="nvY-Eo-xGU" firstAttribute="top" secondItem="02d-Jk-aia" secondAttribute="bottom" constant="16" id="BAa-gN-elG"/>
+                            <constraint firstItem="Fh4-Dr-zAl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="phU-Wk-g3z" secondAttribute="leading" constant="53" id="H6k-iS-FXh"/>
                             <constraint firstItem="Fh4-Dr-zAl" firstAttribute="centerX" secondItem="phU-Wk-g3z" secondAttribute="centerX" id="INw-5T-sNI"/>
                             <constraint firstItem="dub-FL-HM3" firstAttribute="top" secondItem="5jP-th-7xR" secondAttribute="bottom" constant="4" id="J79-xx-P0t"/>
                             <constraint firstItem="cw7-w3-9u0" firstAttribute="top" secondItem="Fh4-Dr-zAl" secondAttribute="bottom" constant="16" id="JHT-ZH-sAS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nvY-Eo-xGU" secondAttribute="trailing" constant="4" id="K0l-zO-GtQ"/>
                             <constraint firstItem="xLb-pr-D4p" firstAttribute="top" secondItem="nvY-Eo-xGU" secondAttribute="bottom" constant="16" id="L0f-G6-iQQ"/>
+                            <constraint firstItem="Xt9-4P-zVT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jJY-qA-c4h" secondAttribute="bottom" constant="8" id="LhS-t2-eQK"/>
                             <constraint firstItem="jJY-qA-c4h" firstAttribute="top" secondItem="nvY-Eo-xGU" secondAttribute="bottom" constant="16" id="P0A-EV-x36"/>
                             <constraint firstItem="1ou-oR-ozH" firstAttribute="leading" secondItem="cw7-w3-9u0" secondAttribute="trailing" constant="4" id="QvI-gs-pxP"/>
                             <constraint firstItem="5jP-th-7xR" firstAttribute="top" secondItem="1ou-oR-ozH" secondAttribute="bottom" constant="4" id="V23-Dl-CSJ"/>
@@ -238,6 +256,7 @@
                             <constraint firstItem="5jP-th-7xR" firstAttribute="leading" secondItem="cw7-w3-9u0" secondAttribute="trailing" constant="4" id="cwZ-bs-56G"/>
                             <constraint firstItem="jJY-qA-c4h" firstAttribute="centerX" secondItem="phU-Wk-g3z" secondAttribute="centerX" constant="-64" id="gBs-Mh-Xi6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1ou-oR-ozH" secondAttribute="trailing" constant="4" id="jYf-OY-uxs"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Fh4-Dr-zAl" secondAttribute="trailing" constant="53" id="uzo-zT-dKf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5jP-th-7xR" secondAttribute="trailing" constant="4" id="v6z-8f-ts6"/>
                             <constraint firstItem="Fh4-Dr-zAl" firstAttribute="top" secondItem="RMG-nf-sg8" secondAttribute="bottom" constant="4" id="xcN-HW-NjQ"/>
                         </constraints>
@@ -248,6 +267,7 @@
                         <outlet property="marca" destination="5jP-th-7xR" id="GmM-dc-HrA"/>
                         <outlet property="nome" destination="1ou-oR-ozH" id="Jcm-6u-deE"/>
                         <outlet property="quantidade" destination="dub-FL-HM3" id="EQA-tH-AjD"/>
+                        <outlet property="salvar" destination="LhS-t2-eQK" id="gjX-TR-RFx"/>
                         <outlet property="unidMed" destination="02d-Jk-aia" id="OjO-9v-a0H"/>
                         <segue destination="2f0-Bk-uhg" kind="show" identifier="segueAbreMapa" id="3PG-KQ-w4I"/>
                     </connections>
@@ -612,7 +632,7 @@
         <image name="camera" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lWp-jD-QiY"/>
+        <segue reference="Oza-ud-XnS"/>
         <segue reference="wrO-vY-1F8"/>
     </inferredMetricsTieBreakers>
 </document>

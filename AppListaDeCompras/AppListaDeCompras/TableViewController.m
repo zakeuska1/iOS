@@ -132,7 +132,6 @@
     [cell.quantidade setText:str];
 }
 
-
 #pragma mark - UITableViewDelegate
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
