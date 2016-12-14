@@ -8,7 +8,10 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController ()<MKMapViewDelegate>{
+    __weak IBOutlet MKMapView *mapa;
+    CLLocationManager *localizacao;
+}
 
 @end
 
@@ -16,7 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    mapa.showsUserLocation = YES;
+    mapa.showsBuildings = YES;
+    
+    localizacao = [CLLocationManager new];
+    
+    if([localizacao respondsToSelector:@selector(requestWhenInUseAuthorization)]){
+        [localizacao requestWhenInUseAuthorization];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

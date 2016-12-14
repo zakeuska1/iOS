@@ -41,10 +41,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Acessando a Localização</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Acessando a Localização</string>
+	<string>Permite identificar sua localizacao?</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Acessando a Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>

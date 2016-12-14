@@ -216,7 +216,6 @@
                                 </state>
                                 <connections>
                                     <action selector="abrirMapa:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="xIr-gF-Z1K"/>
-                                    <action selector="salvar:" destination="8Dy-Vf-Dwg" eventType="touchUpInside" id="P5y-id-fGO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-qA-c4h">
@@ -288,17 +287,24 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-b2-GAN"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X6O-b2-GAN">
+                                <connections>
+                                    <outlet property="delegate" destination="2f0-Bk-uhg" id="RMY-u8-T5j"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X6O-b2-GAN" firstAttribute="leading" secondItem="ayh-X2-duF" secondAttribute="leading" id="5C3-hi-cHZ"/>
-                            <constraint firstItem="X6O-b2-GAN" firstAttribute="top" secondItem="DAE-dp-UlK" secondAttribute="bottom" id="Edv-O1-QO4"/>
-                            <constraint firstAttribute="bottom" secondItem="X6O-b2-GAN" secondAttribute="bottom" id="Mck-kJ-Zb6"/>
-                            <constraint firstAttribute="trailing" secondItem="X6O-b2-GAN" secondAttribute="trailing" id="gWB-J0-mrm"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="leading" secondItem="ayh-X2-duF" secondAttribute="leading" id="ENe-RA-AzP"/>
+                            <constraint firstAttribute="trailing" secondItem="X6O-b2-GAN" secondAttribute="trailing" id="bwU-QP-76a"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="top" secondItem="DAE-dp-UlK" secondAttribute="bottom" id="lCk-Jc-egv"/>
+                            <constraint firstItem="X6O-b2-GAN" firstAttribute="bottom" secondItem="rYN-IK-eSL" secondAttribute="top" id="pSH-SR-CFp"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="localizacao" destination="X6O-b2-GAN" id="G7W-fU-LTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kup-WU-94d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
