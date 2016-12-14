@@ -21,7 +21,6 @@
     [super viewDidLoad];
     
     mapa.showsUserLocation = YES;
-    mapa.showsBuildings = YES;
     
     localizacao = [CLLocationManager new];
     
