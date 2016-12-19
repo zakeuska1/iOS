@@ -29,6 +29,27 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        [localizacao requestWhenInUseAuthorization];
+    }
+    
+    [localizacao startUpdatingLocation];
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    
+    CLLocation *local = [locations firstObject];
+    CLLocationCoordinate2D coordenada = local.coordinate;
+    
+    NSLog(@"Latitude: %f, Longitude: %f", coordenada.latitude, coordenada.longitude);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
